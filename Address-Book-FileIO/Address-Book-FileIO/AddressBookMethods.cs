@@ -121,6 +121,7 @@ namespace Address_Book_FileIO
             }
         }
 
+
         public void findCountSameStateOrCityPerson()
         {
             Console.WriteLine("\n Enter city name");
@@ -142,6 +143,16 @@ namespace Address_Book_FileIO
             Console.WriteLine("Enter lastname of the user you want to Delete");
             var lastName = Console.ReadLine();
             listofcontacts.RemoveAll(item => item.firstName == firstName && item.lastName == lastName);
+        }
+
+        public void WritePersonDetailTextFile()//Adding WriteDetails to text file
+        {
+            ReadWriteData.WriteTextFile(listofcontacts);
+        }
+
+        public void ReadPersonDetailTxtFile()//Adding Readdetails to text file
+        {
+            ReadWriteData.ReadTextFile();
         }
         public void editPerson()//Adding EditPerson Method
         {
