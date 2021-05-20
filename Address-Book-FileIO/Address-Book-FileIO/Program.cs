@@ -56,7 +56,7 @@ namespace Address_Book_FileIO
                     "\n2.Edit Contact \n3.Delete Contact  \n4.Display Contacts" +
                     " \n5.Search Person By City & State \n6.Display Contacts Same City " +
                     "\n7.Display Contacts Same State \n8.View number of contacts of city and state " +
-                    " \n9.Display Contacts in Sorted \n10.Exit");
+                    " \n9.Display Contacts in Sorted by state or city \n10.Exit");
                //Inside While declare one variable of name choice
                //Create as a Readline for user input
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -190,13 +190,31 @@ namespace Address_Book_FileIO
                         break;
 
                     case 10:
+                        Console.WriteLine("\nEnter Address Book Name for Sort contacts based on City or State");
+                        string nameAddressBookforSorting = Console.ReadLine();
+                        Console.WriteLine("\nChoose option for sorting \n1.By City  \n2.By State \n3.By Zip");
+                        int choiceSorting = Convert.ToInt32(Console.ReadLine());
+                        switch (choiceSorting)
+                        {
+                            case 1:
+                                mydictionarycontact[nameAddressBookforSorting].displayPersonInOrderByCity();
+                                break;
+                            case 2:
+                                mydictionarycontact[nameAddressBookforSorting].displayPersonInOrderByState();
+                                break;
+                            case 3:
+                                mydictionarycontact[nameAddressBookforSorting].displayPersonInOrderByZip();
+                                break;
+                        }
+                        break;
+
+                    case 11:
                         Result = false;
                         break;
                     default:
                         Console.WriteLine("Please enter valid option");
                         break;
                 }
-
             }
             void addContactBook(AddressBookMethods addressBook)
             {

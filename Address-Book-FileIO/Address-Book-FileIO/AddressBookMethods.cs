@@ -58,7 +58,36 @@ namespace Address_Book_FileIO
                 Console.WriteLine("FirstName: {0}, LastName: {1}, city: {2}, state: {3}, email: {4}, phoneNumber: {5}", person.firstName, person.lastName, person.city, person.state, person.email, person.phoneNumber);
             }
         }
-
+        public void displayPersonInOrderByCity()//Display person In Order by City
+        {
+            Console.WriteLine("\nEntered Person Details is in Order :");
+            //(parameter)person key
+            //oredrby is a inbuild fuction for asending and descending ordr
+            foreach (var person in listofcontacts.OrderBy(Key => Key.city))
+            {
+                Console.WriteLine("FirstName: {0}, LastName: {1}, city: {2}, state: {3}, email: {4}, phoneNumber: {5}, Zip:{6}", person.firstName, person.lastName, person.city, person.state, person.email, person.phoneNumber, person.zip);
+            }
+        }
+        public void displayPersonInOrderByState()//Display person by State
+        {
+            Console.WriteLine("\nEntered Person Details is in Order :");
+            //(parameter)person key
+            //oredrby is a inbuild fuction for asending and descending ordr
+            foreach (var person in listofcontacts.OrderBy(Key => Key.state))
+            {
+                Console.WriteLine("FirstName: {0}, LastName: {1}, city: {2}, state: {3}, email: {4}, phoneNumber: {5}, Zip:{6}", person.firstName, person.lastName, person.city, person.state, person.email, person.phoneNumber, person.zip);
+            }
+        }
+        public void displayPersonInOrderByZip()//
+        {
+            Console.WriteLine("\nEntered Person Details is in Order :");
+            //(parameter)person key
+            //oredrby is a inbuild fuction for asending and descending ordr
+            foreach (var person in listofcontacts.OrderBy(Key => Key.zip))
+            {
+                Console.WriteLine("FirstName: {0}, LastName: {1}, city: {2}, state: {3}, email: {4}, phoneNumber: {5}, Zip:{6}", person.firstName, person.lastName, person.city, person.state, person.email, person.phoneNumber, person.zip);
+            }
+        }
         public void searchPerson()//ForSerachingPerson
         {
             Console.WriteLine("\n Enter city or state ");
